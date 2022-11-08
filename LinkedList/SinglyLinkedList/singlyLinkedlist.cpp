@@ -130,8 +130,10 @@ int main(){
     while (1)
     {
         cout << "1. Insert in begin" << endl;
-        cout << "2. Exit" << endl;
-        cout << "\n Enter a number between 1 and 2: " << endl;
+        cout << "2. Insert in last" << endl;
+        cout << "3. Insert in position" << endl;
+        cout << "4. Exit" << endl;
+        cout << "\n Enter a number between 1 and 4: " << endl;
 
         cin >> num;
 
@@ -141,9 +143,17 @@ int main(){
             insertBegin();
             cout << endl;
             break;
+        case 2:
+            insertLast();
+            cout << endl;
+            break;
+        case 3:
+            insertInPosition();
+            cout << endl;
+            break;
 
         default:
-            cout << "Please enter a valid number between 1 to 2";
+            cout << "Please enter a valid number between 1 to 4";
             break;
         }
     }
