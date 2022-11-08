@@ -70,7 +70,7 @@ void insertLast()
     h->next = n;
 }
 
-void insertPos()
+void insertInPosition()
 {
     struct node *n, *s, *p;
     int val, pos, count = 0;
