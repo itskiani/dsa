@@ -70,6 +70,57 @@ void insertLast()
     h->next = n;
 }
 
+void insertPos()
+{
+    struct node *n, *s, *p;
+    int val, pos, count = 0;
+    cout << "data: ";
+    cin >> val;
+
+    n = createNode(val);
+    cout << "position: ";
+    cin >> pos;
+
+    int i;
+    s = head;
+
+    while (s != NULL)
+    {
+        s = s->next;
+        count++;
+    }
+
+    if (pos == 1)
+    {
+        if (head == NULL)
+        {
+            head = n;
+            head->next = NULL;
+        }
+        else
+        {
+            p = head;
+            head = n;
+            head->next = p;
+        }
+    }
+    else if (pos > 1 && pos <= count)
+    {
+        s = head;
+        for (i = 1; i < pos; i++)
+        {
+            p = s;
+            s = s->next;
+        }
+        p->next = n;
+        n->next = s;
+    }
+    else
+    {
+        cout << "Position out of range." << endl;
+    }
+}
+
 int main(){
      int num;
 
