@@ -51,6 +51,25 @@ void insertBegin()
     }
 }
 
+void insertLast()
+{
+    struct node *n, *h;
+    int val;
+    cout << "value: ";
+    cin >> val;
+
+    n = createNode(val);
+    h = head;
+
+    while (h->next != NULL)
+    {
+        h = h->next;
+    }
+
+    n->next = NULL;
+    h->next = n;
+}
+
 int main(){
      int num;
 
