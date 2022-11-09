@@ -151,6 +151,10 @@ int main(){
             insertInPosition();
             cout << endl;
             break;
+        case 4:
+            exit(1);
+            cout << endl;
+            break;    
 
         default:
             cout << "Please enter a valid number between 1 to 4";
