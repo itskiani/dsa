@@ -171,8 +171,10 @@ int main(){
         cout << "1. Insert in begin" << endl;
         cout << "2. Insert in last" << endl;
         cout << "3. Insert in position" << endl;
-        cout << "4. Exit" << endl;
-        cout << "\n Enter a number between 1 and 4: " << endl;
+        cout << "4. Delete in position" << endl;
+        cout << "5. Dispaly linkedlist" << endl;
+        cout << "6. Exit" << endl;
+        cout << "\n Enter a number between 1 and 6: " << endl;
 
         cin >> num;
 
@@ -191,12 +193,20 @@ int main(){
             cout << endl;
             break;
         case 4:
+            deleteInPosition();
+            cout << endl;
+            break;
+        case 5:
+            display();
+            cout << endl;
+            break;
+        case 6:
             exit(1);
             cout << endl;
             break;    
 
         default:
-            cout << "Please enter a valid number between 1 to 4";
+            cout << "Please enter a valid number between 1 to 6";
             break;
         }
     }
