@@ -160,6 +160,25 @@ void deleteInPosition()
     }
 }
 
+void display()
+{
+    struct node *s;
+    if (head == NULL)
+    {
+        cout << "Empty" << endl;
+        return;
+    }
+
+    s = head;
+    cout << "Elements: " << endl;
+    while (s != NULL)
+    {
+        cout << s->data << "->";
+        s = s->next;
+    }
+    cout << "NULL" << endl;
+}
+
 int main(){
      int num;
 
