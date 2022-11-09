@@ -121,6 +121,45 @@ void insertInPosition()
     }
 }
 
+void deleteInPosition()
+{
+    struct node *s, *prev;
+    int pos, i, count = 0;
+
+    if (head == NULL)
+        return;
+
+    cout << "position: ";
+    cin >> pos;
+
+    s = head;
+    if (pos == 1)
+        head = s->next;
+    else
+    {
+        while (s != NULL)
+        {
+            s = s->next;
+            count++;
+        }
+
+        if (pos >= 2 && pos <= count)
+        {
+            s = head;
+            for (i = 1; i <= pos - 1; i++)
+            {
+                prev = s;
+                s = s->next;
+            }
+            prev->next = s->next;
+        }
+        else
+            cout << "out of range" << endl;
+
+        free(s);
+    }
+}
+
 int main(){
      int num;
 
