@@ -1,4 +1,4 @@
-# dsa
+# Data Structures and Algorithms
 Open-source collection of Data structures and Algorithms implemented in C++.
 
 ## How To Use It?
