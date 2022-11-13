@@ -1,5 +1,5 @@
 # Data Structures and Algorithms
-Open-source collection of Data structures and Algorithms implemented in C++.
+Open-source collection of data structures and algorithms implemented in C++.
 
 ## How To Use It?
 Just run these commands on the path of the file in the command line.
