@@ -5,6 +5,13 @@ import (
 	"os"
 )
 
+type Node struct {
+	data string
+	next *Node
+}
+
+var head *Node = new(Node)
+
 func main() {
 	for {
 		fmt.Println("1. Insert in begin")
