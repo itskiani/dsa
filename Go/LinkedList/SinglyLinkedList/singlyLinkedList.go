@@ -28,8 +28,10 @@ func createNode(val int) *Node {
 }
 
 func insertBegin() {
-	var n, prev *Node
-	var val int
+	var (
+		n, prev *Node
+		val     int
+	)
 
 	fmt.Print("value: ")
 	fmt.Scan(&val)
