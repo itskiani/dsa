@@ -1,6 +1,7 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
 	"os"
 )
@@ -39,6 +40,7 @@ func listMenu() {
 func main() {
 	var num int
 	listMenu()
+
 	for {
 		fmt.Scan(&num)
 		if num == 0 {
@@ -47,7 +49,15 @@ func main() {
 		} else {
 			switch num {
 			case 1:
-				createNode(23)
+				insertBegin()
+				fmt.Println("press 'Enter' to back to menu....")
+				bufio.NewReader(os.Stdin).ReadBytes('\n')
+				listMenu()
+			case 5:
+				display(head)
+				fmt.Println("press 'Enter' to back to menu....")
+				bufio.NewReader(os.Stdin).ReadBytes('\n')
+				listMenu()
 			case 6:
 				os.Exit(0)
 			default:
