@@ -11,7 +11,7 @@ type Node struct {
 	next *Node
 }
 
-var head *Node = new(Node)
+var head *Node
 
 func createNode(val int) *Node {
 	var node *Node
