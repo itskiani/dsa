@@ -49,6 +49,26 @@ func insertBegin() {
 
 }
 
+func insertLast() {
+	var (
+		n, h *Node
+		val  int
+	)
+
+	fmt.Print("value: ")
+	fmt.Scan(&val)
+
+	n = createNode(val)
+	h = head
+
+	for h.next != nil {
+		h = h.next
+	}
+
+	n.next = nil
+	h.next = n
+}
+
 func display(node *Node) {
 	s := node
 
