@@ -27,6 +27,40 @@ func createNode(val int) *Node {
 	return node
 }
 
+func insertBegin() {
+	var n, prev *Node
+	var val int
+
+	fmt.Print("value: ")
+	fmt.Scan(&val)
+
+	n = createNode(val)
+
+	if head == nil {
+		head = n
+		head.next = nil
+	} else {
+		prev = head
+		head = n
+		head.next = prev
+	}
+
+}
+
+func display(node *Node) {
+	s := node
+
+	fmt.Println("Elements: ")
+	for {
+		if s == nil {
+			break
+		}
+		fmt.Printf("%d->", s.data)
+		s = s.next
+	}
+	fmt.Println("NULL")
+}
+
 func listMenu() {
 	fmt.Println("1. Insert in begin")
 	fmt.Println("2. Insert in last")
