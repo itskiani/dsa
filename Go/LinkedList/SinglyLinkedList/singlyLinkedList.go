@@ -80,7 +80,7 @@ func display(node *Node) {
 		fmt.Printf("%d->", s.data)
 		s = s.next
 	}
-	fmt.Println("NULL")
+	fmt.Println("End")
 }
 
 func listMenu() {
@@ -106,6 +106,11 @@ func main() {
 			switch num {
 			case 1:
 				insertBegin()
+				fmt.Println("press 'Enter' to back to menu....")
+				bufio.NewReader(os.Stdin).ReadBytes('\n')
+				listMenu()
+			case 2:
+				insertLast()
 				fmt.Println("press 'Enter' to back to menu....")
 				bufio.NewReader(os.Stdin).ReadBytes('\n')
 				listMenu()
