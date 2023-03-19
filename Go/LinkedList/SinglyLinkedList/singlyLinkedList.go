@@ -149,6 +149,11 @@ func main() {
 				fmt.Println("press 'Enter' to back to menu....")
 				bufio.NewReader(os.Stdin).ReadBytes('\n')
 				listMenu()
+			case 4:
+				deleteInPosition()
+				fmt.Println("press 'Enter' to back to menu....")
+				bufio.NewReader(os.Stdin).ReadBytes('\n')
+				listMenu()
 			case 5:
 				display(head)
 				fmt.Println("press 'Enter' to back to menu....")
