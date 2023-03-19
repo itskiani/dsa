@@ -69,6 +69,51 @@ func insertLast() {
 	h.next = n
 }
 
+func insertInPosition() {
+	var (
+		n, s, p         *Node
+		val, pos, count int
+	)
+
+	fmt.Print("data: ")
+	fmt.Scan(&val)
+
+	n = createNode(val)
+	fmt.Print("position: ")
+	fmt.Scan(&pos)
+
+	var i int
+	s = head
+
+	for s != nil {
+		s = s.next
+		count++
+	}
+
+	if pos == 1 {
+		if head == nil {
+			head = n
+			head.next = nil
+		} else {
+			p = head
+			head = n
+			head.next = p
+		}
+	} else if pos > 1 && pos <= count {
+		s = head
+
+		for i = 1; i < pos; i++ {
+			p = s
+			s = s.next
+		}
+
+		p.next = n
+		n.next = s
+	} else {
+		fmt.Println("Position out of range.")
+	}
+}
+
 func deleteInPosition() {
 	var (
 		s, prev       *Node
