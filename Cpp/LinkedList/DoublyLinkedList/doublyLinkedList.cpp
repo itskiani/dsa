@@ -8,6 +8,27 @@ struct node {
     struct node* prev;
 } *head;
 
+void createNode(int value){
+	struct node *s, *t;
+
+	t = new(struct node);
+	t->data = value;
+	t->next = NULL;
+
+	if (head == NULL){
+		t->prev = NULL;
+		head = t;
+	} else {
+		s = head;
+
+		while (s->next != NULL)
+			s = s->next;
+
+		s->next = t;
+		t->prev = s;
+	}
+}
+
 void listMenu(){
     cout << "1. Insert in begin" << endl;
     cout << "2. Insert in last" << endl;
