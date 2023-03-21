@@ -29,6 +29,22 @@ void createNode(int value){
 	}
 }
 
+void insertBegin(int value){
+	if (head == NULL){
+		cout << "First create the list." << endl;
+		return;
+	}
+
+	struct node *t;
+	t = new(struct node);
+	t->data = value;
+	t->prev = NULL;
+	t->next = head;
+
+	head->prev = t;
+	head = t;
+}
+
 void listMenu(){
     cout << "1. Insert in begin" << endl;
     cout << "2. Insert in last" << endl;
