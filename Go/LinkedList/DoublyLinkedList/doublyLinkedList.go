@@ -10,6 +10,31 @@ type Node struct {
 	prev *Node
 }
 
+var head *Node
+
+func createNode(val int) *Node {
+	var node, n *Node
+
+	node = new(Node)
+	node.data = val
+	node.next = nil
+
+	if head == nil {
+		node.prev = nil
+		head = node
+	} else {
+		n = head
+
+		for n.next != nil {
+			n = n.next
+		}
+		n.next = node
+		node.prev = n
+	}
+
+	return node
+}
+
 func listMenu() {
 	fmt.Println("1. Insert in begin")
 	fmt.Println("2. Insert in last")
