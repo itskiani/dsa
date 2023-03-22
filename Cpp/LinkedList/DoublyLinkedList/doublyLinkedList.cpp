@@ -9,23 +9,23 @@ struct node {
 } *head;
 
 void createNode(int value){
-	struct node *s, *t;
+	struct node *node, *n;
 
-	t = new(struct node);
-	t->data = value;
-	t->next = NULL;
+	node = new(struct node);
+	node->data = value;
+	node->next = NULL;
 
 	if (head == NULL){
-		t->prev = NULL;
-		head = t;
+		node->prev = NULL;
+		head = node;
 	} else {
-		s = head;
+		n = head;
 
-		while (s->next != NULL)
-			s = s->next;
+		while (n->next != NULL)
+			n = n->next;
 
-		s->next = t;
-		t->prev = s;
+		n->next = node;
+		node->prev = n;
 	}
 }
 
