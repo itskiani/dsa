@@ -35,6 +35,22 @@ func createNode(val int) *Node {
 	return node
 }
 
+func insertBegin(val int) {
+	if head == nil {
+		fmt.Println("First create the list.")
+		return
+	}
+
+	var node *Node
+	node = new(Node)
+	node.data = val
+	node.prev = nil
+	node.next = head
+
+	head.prev = node
+	head = node
+}
+
 func listMenu() {
 	fmt.Println("1. Insert in begin")
 	fmt.Println("2. Insert in last")
