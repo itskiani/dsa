@@ -45,6 +45,34 @@ void insertBegin(int value){
 	head = t;
 }
 
+void insertInPosition(int val, int pos){
+	struct node  *n, *p;
+
+	if (head == NULL)
+		return;
+	
+	p = head;
+	for (int i=0; i<pos-1; i++){
+		p = p->next;
+		if(p == NULL){
+			cout << "Sorry, the position you entered is wrong.";
+		}
+	}
+
+	n = new(struct node);
+	n->data = val;
+	if(p->next == NULL){
+		p->next = n;
+		n->next = NULL;
+		n->prev = p;
+	}else{
+		n->next = p->next;
+		p->next->prev = n;
+		p->next = n;
+		n->prev = p;
+	}
+}
+
 void listMenu(){
     cout << "1. Insert in begin" << endl;
     cout << "2. Insert in last" << endl;
