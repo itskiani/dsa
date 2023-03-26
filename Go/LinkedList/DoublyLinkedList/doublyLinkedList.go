@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"os"
 )
 
 type Node struct {
@@ -49,6 +50,35 @@ func insertBegin(val int) {
 
 	head.prev = node
 	head = node
+}
+
+func insertInPosition(val int, pos int) {
+	var n, p *Node
+
+	if head == nil {
+		os.Exit(0)
+	}
+
+	p = head
+	for i := 0; i < pos-1; i++ {
+		p = p.next
+		if p == nil {
+			fmt.Println("Sorry, the position you entered is wrong.")
+		}
+	}
+
+	n = new(Node)
+	n.data = val
+	if p.next == nil {
+		p.next = n
+		n.next = nil
+		n.prev = p
+	} else {
+		n.next = p.next
+		p.next.prev = n
+		p.next = n
+		n.prev = p
+	}
 }
 
 func listMenu() {
