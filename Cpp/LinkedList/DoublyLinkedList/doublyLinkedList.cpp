@@ -73,6 +73,25 @@ void insertInPosition(int val, int pos){
 	}
 }
 
+void display()
+{
+    struct node *s;
+    if (head == NULL)
+    {
+        cout << "Empty" << endl;
+        return;
+    }
+
+    s = head;
+    cout << "Elements: " << endl;
+    while (s != NULL)
+    {
+        cout << s->data << "<->";
+        s = s->next;
+    }
+    cout << "NULL" << endl;
+}
+
 void listMenu(){
     cout << "1. Insert in begin" << endl;
     cout << "2. Insert in last" << endl;
