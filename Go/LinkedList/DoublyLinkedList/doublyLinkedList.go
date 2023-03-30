@@ -81,6 +81,20 @@ func insertInPosition(val int, pos int) {
 	}
 }
 
+func display(node *Node) {
+	s := node
+
+	fmt.Println("Elements: ")
+	for {
+		if s == nil {
+			break
+		}
+		fmt.Printf("%d<->", s.data)
+		s = s.next
+	}
+	fmt.Println("NULL")
+}
+
 func listMenu() {
 	fmt.Println("1. Insert in begin")
 	fmt.Println("2. Insert in last")
