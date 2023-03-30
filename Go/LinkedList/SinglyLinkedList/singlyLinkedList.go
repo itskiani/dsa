@@ -160,7 +160,7 @@ func display(node *Node) {
 		fmt.Printf("%d->", s.data)
 		s = s.next
 	}
-	fmt.Println("End")
+	fmt.Println("NULL")
 }
 
 func listMenu() {
