@@ -43,8 +43,14 @@ void insertBegin(){
 	head = t;
 }
 
-void insertInPosition(int val, int pos){
+void insertInPosition(){
 	struct node  *n, *p;
+
+	int val, pos;
+	cout << "Value: ";
+    cin >> val;
+	cout << "Position: ";
+    cin >> pos;
 
 	if (head == NULL)
 		return;
@@ -122,7 +128,7 @@ int main(){
             cout << endl;
             break;
         case 3:
-            // insertInPosition();
+            insertInPosition();
             cout << endl;
             break;
         case 4:
