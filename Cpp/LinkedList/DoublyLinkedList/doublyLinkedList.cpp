@@ -101,6 +101,49 @@ void listMenu(){
 }
 
 int main(){
-    listMenu();
+	int num;
+
+    // Start with empty list
+    head = NULL;
+
+    while (1)
+    {
+        listMenu();
+        cin >> num;
+
+        switch (num)
+        {
+        case 1:
+            insertBegin();
+            cout << endl;
+            break;
+        case 2:
+            // insertLast();
+            cout << endl;
+            break;
+        case 3:
+            // insertInPosition();
+            cout << endl;
+            break;
+        case 4:
+            // deleteInPosition();
+            cout << endl;
+            break;
+        case 5:
+            display();
+            cout << endl;
+            break;
+        case 6:
+            exit(1);
+            cout << endl;
+            break;    
+
+        default:
+            cout << "Please enter a valid number between 1 to 6";
+            break;
+        }
+    }
+
     return 0;
+
 }
