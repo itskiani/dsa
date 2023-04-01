@@ -8,36 +8,34 @@ struct node {
     struct node* prev;
 } *head;
 
-void createNode(int value){
+void createNode(int val){
 	struct node *node, *n;
 
 	node = new(struct node);
-	node->data = value;
+	node->data = val;
 	node->next = NULL;
 
 	if (head == NULL){
 		node->prev = NULL;
 		head = node;
 	} else {
-		n = head;
-
-		while (n->next != NULL)
-			n = n->next;
-
-		n->next = node;
-		node->prev = n;
+		return;
 	}
 }
 
-void insertBegin(int value){
+void insertBegin(){
+	int val;
+	cout << "Value: ";
+	cin >> val;
+
 	if (head == NULL){
-		cout << "First create the list." << endl;
+		createNode(val);
 		return;
 	}
 
 	struct node *t;
 	t = new(struct node);
-	t->data = value;
+	t->data = val;
 	t->prev = NULL;
 	t->next = head;
 
