@@ -42,6 +42,31 @@ void insertBegin(){
 	head = t;
 }
 
+void insertLast()
+{
+    struct node *n, *h;
+    int val;
+    cout << "value: ";
+    cin >> val;
+
+	if (head == NULL){
+		n = createNode(val);
+		return;
+	}else {
+		n = new(struct node);
+		h = head;
+  	 	while (h->next != NULL)
+  	  	{
+ 	       h = h->next;
+	    }
+
+  		h->next = n;
+   		n->next = NULL;
+		n->data = val;
+		n->prev = h;
+	}    
+}
+
 void insertInPosition(){
 	struct node  *n, *p;
 
@@ -123,7 +148,7 @@ int main(){
             cout << endl;
             break;
         case 2:
-            // insertLast();
+            insertLast();
             cout << endl;
             break;
         case 3:
