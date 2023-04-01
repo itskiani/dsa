@@ -8,19 +8,18 @@ struct node {
     struct node* prev;
 } *head;
 
-void createNode(int val){
+node* createNode(int val){
 	struct node *node, *n;
 
 	node = new(struct node);
+
 	node->data = val;
 	node->next = NULL;
+	node->prev = NULL;
 
-	if (head == NULL){
-		node->prev = NULL;
-		head = node;
-	} else {
-		return;
-	}
+	head = node;
+
+	return node;
 }
 
 void insertBegin(){
