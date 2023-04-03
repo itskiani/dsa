@@ -14,31 +14,26 @@ type Node struct {
 var head *Node
 
 func createNode(val int) *Node {
-	var node, n *Node
+	var node *Node
 
 	node = new(Node)
+
 	node.data = val
 	node.next = nil
+	node.prev = nil
 
-	if head == nil {
-		node.prev = nil
-		head = node
-	} else {
-		n = head
-
-		for n.next != nil {
-			n = n.next
-		}
-		n.next = node
-		node.prev = n
-	}
+	head = node
 
 	return node
 }
 
-func insertBegin(val int) {
+func insertBegin() {
+	var val int
+	fmt.Print("Value: ")
+	fmt.Scan(&val)
+
 	if head == nil {
-		fmt.Println("First create the list.")
+		createNode(val)
 		return
 	}
 
