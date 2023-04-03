@@ -9,7 +9,7 @@ struct node {
 } *head;
 
 node* createNode(int val){
-	struct node *node, *n;
+	struct node *node;
 
 	node = new(struct node);
 
