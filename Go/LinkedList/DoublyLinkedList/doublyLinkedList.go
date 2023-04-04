@@ -48,6 +48,34 @@ func insertBegin() {
 	head = node
 }
 
+func insertLast() {
+	var (
+		n, h *Node
+		val  int
+	)
+
+	fmt.Print("value: ")
+	fmt.Scan(&val)
+
+	if head == nil {
+		n = createNode(val)
+		return
+	} else {
+		n = new(Node)
+		h = head
+
+		for h.next != nil {
+			h = h.next
+		}
+
+		h.next = n
+		n.next = nil
+		n.data = val
+		n.prev = h
+	}
+
+}
+
 func insertInPosition(val int, pos int) {
 	var n, p *Node
 
@@ -118,7 +146,7 @@ func main() {
 				bufio.NewReader(os.Stdin).ReadBytes('\n')
 				listMenu()
 			case 2:
-				// insertLast()
+				insertLast()
 				fmt.Println("press 'Enter' to back to menu....")
 				bufio.NewReader(os.Stdin).ReadBytes('\n')
 				listMenu()
