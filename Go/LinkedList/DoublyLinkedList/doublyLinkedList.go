@@ -76,11 +76,19 @@ func insertLast() {
 
 }
 
-func insertInPosition(val int, pos int) {
-	var n, p *Node
+func insertInPosition() {
+	var (
+		n, p     *Node
+		val, pos int
+	)
+
+	fmt.Print("Value: ")
+	fmt.Scan(&val)
+	fmt.Print("Position: ")
+	fmt.Scan(&pos)
 
 	if head == nil {
-		os.Exit(0)
+		return
 	}
 
 	p = head
@@ -151,7 +159,7 @@ func main() {
 				bufio.NewReader(os.Stdin).ReadBytes('\n')
 				listMenu()
 			case 3:
-				// insertInPosition()
+				insertInPosition()
 				fmt.Println("press 'Enter' to back to menu....")
 				bufio.NewReader(os.Stdin).ReadBytes('\n')
 				listMenu()
