@@ -113,6 +113,41 @@ func insertInPosition() {
 	}
 }
 
+func deleteInPosition() {
+	var (
+		s, prev       *Node
+		pos, i, count int
+	)
+
+	if head == nil {
+		return
+	}
+
+	fmt.Print("position: ")
+	fmt.Scan(&pos)
+
+	s = head
+	if pos == 1 {
+		head = s.next
+	} else {
+		for s != nil {
+			s = s.next
+			count++
+		}
+
+		if pos >= 2 && pos <= count {
+			s = head
+			for i = 1; i <= pos-1; i++ {
+				prev = s
+				s = s.next
+			}
+			prev.next = s.next
+		} else {
+			fmt.Println("out of range.")
+		}
+	}
+}
+
 func display(node *Node) {
 	s := node
 
@@ -164,7 +199,7 @@ func main() {
 				bufio.NewReader(os.Stdin).ReadBytes('\n')
 				listMenu()
 			case 4:
-				// deleteInPosition()
+				deleteInPosition()
 				fmt.Println("press 'Enter' to back to menu....")
 				bufio.NewReader(os.Stdin).ReadBytes('\n')
 				listMenu()
