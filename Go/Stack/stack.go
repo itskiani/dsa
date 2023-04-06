@@ -3,8 +3,28 @@ package main
 import "fmt"
 
 type Node struct {
-	data string
+	data int
 	next *Node
+}
+
+var head *Node = nil
+var size int
+
+func push() {
+	var val int
+	fmt.Print("Value: ")
+	fmt.Scan(&val)
+
+	if head == nil {
+		head = new(Node)
+		head.data = val
+	} else {
+		var node *Node = new(Node)
+		node.data = val
+		node.next = head
+		head = node
+	}
+	size++
 }
 
 func listMenu() {
