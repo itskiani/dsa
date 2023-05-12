@@ -23,7 +23,18 @@ func push() {
 		node.next = head
 		head = node
 	}
-	size++
+}
+
+func pop() {
+
+	if head == nil {
+		fmt.Println("Stack is empty :|")
+	}
+
+	val := head
+	head = head.next
+	val.next = nil
+
 }
 
 func listMenu() {
