@@ -41,6 +41,19 @@ func pop() {
 
 }
 
+func display(node *Node) {
+	s := node
+
+	fmt.Println("\n Elements: ")
+	for {
+		if s == nil {
+			break
+		}
+		fmt.Printf("%d \n", s.data)
+		s = s.next
+	}
+}
+
 func listMenu() {
 	fmt.Println("1. Insert in stack")
 	fmt.Println("2. Remove in stack")
