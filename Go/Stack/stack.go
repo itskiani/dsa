@@ -8,7 +8,6 @@ type Node struct {
 }
 
 var head *Node = nil
-var size int
 
 func push() {
 	var val int
