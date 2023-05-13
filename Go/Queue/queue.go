@@ -12,6 +12,10 @@ func isFull(queue *Node) bool {
 	return (queue.size == queue.cap)
 }
 
+func isEmpty(queue *Node) bool {
+	return (queue.size == 0)
+}
+
 func main() {
 
 }
