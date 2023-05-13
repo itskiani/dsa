@@ -4,8 +4,12 @@ type Node struct {
 	data  int
 	front *Node
 	rear  *Node
-	size  int
+	size  uint
 	cap   uint
+}
+
+func isFull(queue *Node) bool {
+	return (queue.size == queue.cap)
 }
 
 func main() {
