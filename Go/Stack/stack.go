@@ -59,7 +59,7 @@ func listMenu() {
 	fmt.Println("2. Remove in stack")
 	fmt.Println("3. Display stack")
 	fmt.Println("4. Exit")
-	fmt.Println("Enter a number between 1 and 3:")
+	fmt.Println("Enter a number between 1 and 4:")
 }
 
 func main() {
