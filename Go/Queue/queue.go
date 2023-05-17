@@ -2,10 +2,10 @@ package main
 
 import "fmt"
 
-type Node struct {
-	data  int
-	front *Node
-	rear  *Node
+type queue struct {
+	data  *[]int
+	front int
+	rear  int
 	size  uint
 	cap   uint
 }
