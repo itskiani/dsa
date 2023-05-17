@@ -1,8 +1,12 @@
 package main
 
-import "fmt"
+import (
+	"bufio"
+	"fmt"
+	"os"
+)
 
-type queue struct {
+type Queue struct {
 	data  *[]int
 	front int
 	rear  int
@@ -10,8 +14,8 @@ type queue struct {
 	cap   uint
 }
 
-func isFull(queue *Node) bool {
-	return (queue.size == queue.cap)
+func isFull(queue *Queue) bool {
+	return queue.size == queue.cap
 }
 
 func isEmpty(queue *Node) bool {
@@ -27,5 +31,36 @@ func listMenu() {
 }
 
 func main() {
+	var num int
+	listMenu()
 
+	for {
+		fmt.Scan(&num)
+		if num == 0 {
+			fmt.Println("Thank You, exiting.....")
+			break
+		} else {
+			switch num {
+			case 1:
+				// push()
+				fmt.Println("\n press 'Enter' to back to menu....")
+				bufio.NewReader(os.Stdin).ReadBytes('\n')
+				listMenu()
+			case 2:
+				// pop()
+				fmt.Println("\n press 'Enter' to back to menu....")
+				bufio.NewReader(os.Stdin).ReadBytes('\n')
+				listMenu()
+			case 3:
+				// display()
+				fmt.Println("\n press 'Enter' to back to menu....")
+				bufio.NewReader(os.Stdin).ReadBytes('\n')
+				listMenu()
+			case 4:
+				os.Exit(0)
+			default:
+				fmt.Println("Please enter a valid number between 1 to 4")
+			}
+		}
+	}
 }
