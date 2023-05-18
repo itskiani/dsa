@@ -32,7 +32,11 @@ func newQueue(size int) *Queue {
 	}
 }
 
-func (q *Queue) add(n *Node) {
+func add(q *Queue) {
+	var val *Node
+	fmt.Print("Value: ")
+	fmt.Scan(&val)
+
 	if q.front == q.rear && q.size > 0 {
 		nodes := make([]*Node, len(q.nodes)+q.cap)
 		copy(nodes, q.nodes[q.front:])
@@ -41,7 +45,7 @@ func (q *Queue) add(n *Node) {
 		q.rear = len(q.nodes)
 		q.nodes = nodes
 	}
-	q.nodes[q.rear] = n
+	q.nodes[q.rear] = val
 	q.rear = (q.rear + 1) % len(q.nodes)
 	q.size++
 }
@@ -57,6 +61,7 @@ func listMenu() {
 func main() {
 	var num int
 	listMenu()
+	q := newQueue(1)
 
 	for {
 		fmt.Scan(&num)
@@ -66,7 +71,7 @@ func main() {
 		} else {
 			switch num {
 			case 1:
-				// push()
+				add(q)
 				fmt.Println("\n press 'Enter' to back to menu....")
 				bufio.NewReader(os.Stdin).ReadBytes('\n')
 				listMenu()
