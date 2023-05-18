@@ -25,6 +25,20 @@ func isEmpty(queue *Queue) bool {
 	return (queue.size == 0)
 }
 
+func (q *Queue) add(n *Node) {
+	if q.front == q.rear && q.size > 0 {
+		nodes := make([]*Node, len(q.nodes)+q.cap)
+		copy(nodes, q.nodes[q.front:])
+		copy(nodes[len(q.nodes)-q.front:], q.nodes[:q.front])
+		q.front = 0
+		q.rear = len(q.nodes)
+		q.nodes = nodes
+	}
+	q.nodes[q.rear] = n
+	q.rear = (q.rear + 1) % len(q.nodes)
+	q.size++
+}
+
 func listMenu() {
 	fmt.Println("1. Insert in queue")
 	fmt.Println("2. Remove in queue")
