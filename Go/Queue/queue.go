@@ -25,7 +25,7 @@ func isEmpty(queue *Queue) bool {
 	return (queue.size == 0)
 }
 
-func NewQueue(size int) *Queue {
+func newQueue(size int) *Queue {
 	return &Queue{
 		nodes: make([]*Node, size),
 		cap:   size,
