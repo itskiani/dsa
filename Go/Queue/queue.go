@@ -6,12 +6,15 @@ import (
 	"os"
 )
 
+type Node struct {
+	val int
+}
 type Queue struct {
-	data  *[]int
+	nodes []*Node
 	front int
 	rear  int
-	size  uint
-	cap   uint
+	size  int
+	cap   int
 }
 
 func isFull(queue *Queue) bool {
