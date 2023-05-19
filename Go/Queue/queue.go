@@ -50,6 +50,15 @@ func add(q *Queue) {
 	q.size++
 }
 
+func pop(q *Queue) {
+	if q.size == 0 {
+		fmt.Println("Queue is empty.")
+	}
+
+	q.front = (q.front + 1) % len(q.nodes)
+	q.size--
+}
+
 func listMenu() {
 	fmt.Println("1. Insert in queue")
 	fmt.Println("2. Remove in queue")
