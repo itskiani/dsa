@@ -81,18 +81,18 @@ func main() {
 			switch num {
 			case 1:
 				add(q)
-				fmt.Println("\n press 'Enter' to back to menu....")
 				bufio.NewReader(os.Stdin).ReadBytes('\n')
+				fmt.Println()
 				listMenu()
 			case 2:
-				// pop()
-				fmt.Println("\n press 'Enter' to back to menu....")
+				pop(q)
 				bufio.NewReader(os.Stdin).ReadBytes('\n')
+				fmt.Println()
 				listMenu()
 			case 3:
 				// display()
-				fmt.Println("\n press 'Enter' to back to menu....")
 				bufio.NewReader(os.Stdin).ReadBytes('\n')
+				fmt.Println()
 				listMenu()
 			case 4:
 				os.Exit(0)
