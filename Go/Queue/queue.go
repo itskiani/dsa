@@ -32,7 +32,7 @@ func newQueue(size int) *Queue {
 	}
 }
 
-func add(q *Queue) {
+func enqueue(q *Queue) {
 	var val *Node
 	fmt.Print("Value: ")
 	fmt.Scan(&val)
@@ -50,7 +50,7 @@ func add(q *Queue) {
 	q.size++
 }
 
-func pop(q *Queue) {
+func dequeue(q *Queue) {
 	if q.size == 0 {
 		fmt.Println("Queue is empty.")
 	}
@@ -80,17 +80,17 @@ func main() {
 		} else {
 			switch num {
 			case 1:
-				add(q)
+				enqueue(q)
 				bufio.NewReader(os.Stdin).ReadBytes('\n')
 				fmt.Println()
 				listMenu()
 			case 2:
-				pop(q)
+				dequeue(q)
 				bufio.NewReader(os.Stdin).ReadBytes('\n')
 				fmt.Println()
 				listMenu()
 			case 3:
-				// display()
+				display(q)
 				bufio.NewReader(os.Stdin).ReadBytes('\n')
 				fmt.Println()
 				listMenu()
